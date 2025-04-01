@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Button, TextField, Stack } from "@mui/material";
+import {Button, TextField, Stack, useMediaQuery} from "@mui/material";
 import TaskList from "../TaskList";
 import FilterButton from "../FilterButton";
 import styles from "./index.module.css";
@@ -85,6 +85,8 @@ const TodoCard: React.FC<TodoCardProps> = ({ language, currentDate }) => {
         return true;
     }), [tasks, filter]);
 
+    const isMobile = useMediaQuery('(max-width:600px)');
+
     return (
         <div className={styles.todoCard}>
             <div className={styles.title}>
@@ -99,6 +101,9 @@ const TodoCard: React.FC<TodoCardProps> = ({ language, currentDate }) => {
                     value={newTask}
                     onChange={(e) => setNewTask((e.target as HTMLInputElement).value)}
                     placeholder={language === 'ru' ? "Время вписать задачу, Милорд..." : "Time to write a task, My Lord..."}
+                    style={{
+                        fontSize: isMobile ? '12px' : '16px',
+                    }}
                     fullWidth
                     className={styles.taskInput}
                     InputProps={{
@@ -113,9 +118,14 @@ const TodoCard: React.FC<TodoCardProps> = ({ language, currentDate }) => {
 
             <TaskList tasks={filteredTasks} toggleTask={toggleTask} />
 
-            <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2} className={styles.stack}>
+            <Stack
+                direction={isMobile ? "column" : "row"}
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={2}
+                className={`${styles.stack} stack`}>
                 <span>{tasks.filter(t => !t.completed).length} {language === 'ru' ? "задач осталось" : "tasks left"}</span>
-                <Stack direction="row" spacing={1}>
+                <Stack direction={isMobile ? "column" : "row"} spacing={1}>
                     {(["all", "incomplete", "completed"] as FilterType[]).map(f => (
                         <FilterButton
                             key={f}
@@ -126,7 +136,11 @@ const TodoCard: React.FC<TodoCardProps> = ({ language, currentDate }) => {
                         />
                     ))}
                 </Stack>
-                <Button variant="outlined" color="secondary" onClick={clearCompleted} className={styles.buttonClear}>
+                <Button
+                    variant="outlined"
+                    color="secondary"
+                    onClick={clearCompleted}
+                    className={`${styles.buttonClear} buttonClear`}>
                     {language === 'ru' ? "Очистить выполненные" : "Clear completed"}
                 </Button>
             </Stack>

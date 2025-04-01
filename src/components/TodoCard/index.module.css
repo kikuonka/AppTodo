@@ -71,3 +71,43 @@
 .buttonClear:hover {
     background: rgba(116, 65, 41, 0.2) !important;
 }
+
+@media (max-width: 600px) {
+    .todoCard {
+        padding: 15px;
+        margin: 10px;
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .titleText {
+        font-size: 16px;
+    }
+
+    .titleImage {
+        width: 40px;
+        height: 40px;
+    }
+
+    .taskInput {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .buttonAdd {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .stack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttonClear {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

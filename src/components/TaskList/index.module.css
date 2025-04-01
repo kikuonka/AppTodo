@@ -38,3 +38,28 @@
     text-decoration: line-through;
     color: #BA6B2A;
 }
+
+@media (max-width: 600px) {
+    .taskCard {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .taskContainer {
+        gap: 12px;
+    }
+
+    .taskList {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .taskText {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .completed {
+        font-size: 16px;
+    }
+}

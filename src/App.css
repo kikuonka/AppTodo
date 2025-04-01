@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     position: relative;
     min-height: 100vh;
+    padding: 20px;
 }
 
 .date-navigation {
@@ -27,7 +28,7 @@ body {
 .date-button {
     background-color: transparent;
     border: none;
-    font-size: 64px;
+    font-size: 48px;
     color: #242115;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -39,13 +40,66 @@ body {
 
 .date-display {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     color: #242115;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .language-button {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 400px) {
+    .date-navigation {
+        top: 9%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .date-button {
+        font-size: 30px;
+    }
+
+    .date-display {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .language-button {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .date-navigation {
+        top: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .date-button {
+        font-size: 30px;
+    }
+
+    .date-display {
+        font-size: 14px;
+    }
+
+    .language-button {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .date-navigation {
+        top: 20%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
