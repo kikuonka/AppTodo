@@ -5,6 +5,13 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["@testing-library/jest-dom"]
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true
   }
 }
