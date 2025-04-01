@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
+.date-navigation {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    transform: translateY(-50%);
+}
+
+.date-button {
+    background-color: transparent;
+    border: none;
+    font-size: 64px;
+    color: #242115;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.date-button:hover {
+    color: #BA6B2A;
+}
+
+.date-display {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #242115;
+}
+
+.language-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

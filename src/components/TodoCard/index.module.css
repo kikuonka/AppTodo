@@ -1,0 +1,73 @@
+.todoCard {
+    background: #B49D85;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.titleText {
+    font-size: 24px;
+    font-weight: bold;
+    color: #242115;
+    margin: 0;
+}
+
+.titleImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.addTask {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskInput {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.buttonAdd {
+    font-family: "Sofia Sans", sans-serif !important;
+    background-color: #744129 !important;
+    color: #EFEDEC !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+}
+
+.buttonAdd:hover {
+    background-color: #5c3420 !important;
+}
+
+.stack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonClear {
+    font-family: "Sofia Sans", sans-serif !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+    border: 1px solid #BA6B2A !important;
+    color: #242115 !important;
+}
+
+.buttonClear:hover {
+    background: rgba(116, 65, 41, 0.2) !important;
+}
